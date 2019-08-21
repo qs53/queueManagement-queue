@@ -1,0 +1,26 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 0.5em;
+  padding-top: 10px;
+}
+
+h2.my-div {
+  text-align: center;
+  font-size: 38px;
+}
+
+h3.noTokens {
+  padding-top: 30px;
+  text-align: center;
+  display: none;
+}
+
+li.tokenStatus {
+  padding: 5px 40px;
+  font-size: 25px;
+}
+
+strong.tokenNum, strong.counterNum {
+  font-size: 32px;
+}
