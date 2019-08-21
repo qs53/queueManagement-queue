@@ -28,11 +28,3 @@
       document.querySelector("h3.noTokens").style.display = "block";
     }
   });
-
-  function deleteCompletedTokens(isPending, tokenToDelete) {
-    if (isPending === false) {
-      setTimeout(() => {
-        firebase.database().ref("tokens/" + tokenToDelete).remove();
-      }, 3000);
-    }
-  }
