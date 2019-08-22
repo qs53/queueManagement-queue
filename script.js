@@ -4,7 +4,7 @@
   let displayData = "";
 
   firebaseRef.on('value', function(snapshot) {
-    if (snapshot.val()) {
+    if (snapshot.toJSON().tokens) {
       document.querySelector("h3.noTokens").style.display = "none";
       tokenData = snapshot.toJSON().tokens;
       tokenProperties = Object.keys(tokenData);
