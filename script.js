@@ -12,20 +12,17 @@ firebaseRef.on("value", function (snapshot) {
         if (counters[counterDetails[i]].token && snapshot.toJSON().tokens) {
             tokenNo = counters[counterDetails[i]].token;
             token = snapshot.toJSON().tokens[tokenNo];
-            if (token && token.pending === true && token.accepted === undefined) {
-                displayData += "<li><ul class='p-3 bg-danger text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter " + counters[counterDetails[i]].number + " - Token " + (counters[counterDetails[i]].token ? counters[counterDetails[i]].token : "Pending")+ "</li>";
-            } else if (token && token.pending === true && token.accepted === false) {
-                displayData += "<li><ul class='p-3 bg-success text-white'>";
-                displayData += "<li class='tokenStatus blink'>" + counters[counterDetails[i]].name + " Counter " + counters[counterDetails[i]].number + " - Token " + (counters[counterDetails[i]].token ? counters[counterDetails[i]].token : "Accepted")+ "</li>";
+            if (token && token.pending === true && token.accepted === false) {
+                displayData += "<li><ul class='p-3 bg-warning text-white'>";
+                displayData += "<li class='tokenStatus blink'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
             } else if (token && token.pending === false && token.accepted === true) {
                 displayData += "<li><ul class='p-3 bg-success text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter " + counters[counterDetails[i]].number + " - Token " + (counters[counterDetails[i]].token ? counters[counterDetails[i]].token : "In-Progress")+ "</li>";
+                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
             }
             displayData += "</ul></li><br>";
         } else {
-            displayData += "<li><ul class='p-3 bg-secondary text-white'>";
-            displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter " + counters[counterDetails[i]].number + " - Token " + (counters[counterDetails[i]].token ? counters[counterDetails[i]].token : "Inactive")+ "</li>";
+            displayData += "<li><ul class='p-3 bg-danger text-white'>";
+            displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token Allocation Pending</li>";
             displayData += "</ul></li><br>";
         }
     }
