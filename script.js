@@ -14,10 +14,10 @@ firebaseRef.on("value", function (snapshot) {
             token = snapshot.toJSON().tokens[tokenNo];
             if (token && token.pending === true && token.accepted === false) {
                 displayData += "<li><ul class='p-3 bg-warning text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum blink'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
+                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum blink'>" + counters[counterDetails[i]].token + "</strong></li>";
             } else if (token && token.pending === false && token.accepted === true) {
                 displayData += "<li><ul class='p-3 bg-success text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
+                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum'>" + counters[counterDetails[i]].token + "</strong></li>";
             }
             displayData += "</ul></li><br>";
         } else {
