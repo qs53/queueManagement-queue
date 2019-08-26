@@ -6,14 +6,13 @@ let synth = window.speechSynthesis;
 let voices = synth.getVoices();
 
 firebaseRef.on("value", function (snapshot) {
-    counters = snapshot.toJSON().counters;
-    tokens = snapshot.toJSON().tokens;
-    counterDetails = Object.keys(counters);
+    let counters = snapshot.toJSON().counters;
+    let counterDetails = Object.keys(counters);
     document.querySelector("ul.tokensList").innerHTML = "";
     for (let i = 0; i < counterDetails.length; i++) {
         if (counters[counterDetails[i]].token && snapshot.toJSON().tokens) {
-            tokenNo = counters[counterDetails[i]].token;
-            token = snapshot.toJSON().tokens[tokenNo];
+            let tokenNo = counters[counterDetails[i]].token;
+            let token = snapshot.toJSON().tokens[tokenNo];
             if (token && token.pending === true && token.accepted === false) {
                 displayData += "<li><ul class='p-3 bg-warning text-white'>";
                 displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token <strong class='tokenNum blink'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
