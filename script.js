@@ -8,6 +8,18 @@ let voices = synth.getVoices();
 firebaseRef.on("value", function (snapshot) {
     let counters = snapshot.toJSON().counters;
     let counterDetails = Object.keys(counters);
+    let counterDetailsWithNumbers = [];
+
+    counterDetails.forEach((counter) => {
+        counterDetailsWithNumbers.push(Number(counter.slice(7, 9)))
+    });
+    counterDetailsWithNumbers.sort(sortNumber);
+    counterDetails = [];
+    counterDetailsWithNumbers.forEach((counterNum) => {
+        counterDetails.push("counter" + counterNum);
+    });
+    console.log(counterDetails)
+
     document.querySelector("ul.tokensList").innerHTML = "";
     for (let i = 0; i < counterDetails.length; i++) {
         if (counters[counterDetails[i]].token && snapshot.toJSON().tokens) {
@@ -56,4 +68,9 @@ function populateVoices(){
 
 function removeDuplicates(value, index, self) {
     return self.indexOf(value) === index;
+}
+
+
+function sortNumber(a, b) {
+    return a - b;
 }
