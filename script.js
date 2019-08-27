@@ -18,7 +18,6 @@ firebaseRef.on("value", function (snapshot) {
     counterDetailsWithNumbers.forEach((counterNum) => {
         counterDetails.push("counter" + counterNum);
     });
-    console.log(counterDetails)
 
     document.querySelector("ul.tokensList").innerHTML = "";
     for (let i = 0; i < counterDetails.length; i++) {
