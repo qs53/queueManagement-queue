@@ -6,7 +6,6 @@ body {
 
 ul {
   list-style-type: none;
-  line-height: 0.5em;
   padding-top: 10px;
   border-radius: 10px;
 }
@@ -38,8 +37,9 @@ h3.noTokens {
 }
 
 li.tokenStatus {
-  padding: 5px 40px;
+  padding: 5px 10px;
   font-size: 25px;
+  border-radius: 10px;
 }
 
 strong.tokenNum, strong.counterNum {

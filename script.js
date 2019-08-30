@@ -24,17 +24,17 @@ firebaseRef.on("value", function (snapshot) {
             let tokenNo = counters[counterDetails[i]].token;
             let token = snapshot.toJSON().tokens[tokenNo];
             if (token && token.pending === true && token.accepted === false) {
-                displayData += "<div class='col'><li><ul class='p-3 bg-warning text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Calling Token <strong class='tokenNum blink'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
+                displayData += "<div class='col'>";
+                displayData += "<li class='p-3 bg-warning text-white tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Calling Token <strong class='tokenNum blink'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
             } else if (token && token.pending === false && token.accepted === true) {
-                displayData += "<div class='col'><li><ul class='p-3 bg-success text-white'>";
-                displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Attending To Token <strong class='tokenNum'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
+                displayData += "<div class='col'>";
+                displayData += "<li class='p-3 bg-success text-white tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Attending To Token <strong class='tokenNum'>" + counters[counterDetails[i]].prefix + counters[counterDetails[i]].token + "</strong></li>";
             }
-            displayData += "</ul></li></div><br>";
+            displayData += "</div><br>";
         } else {
-            displayData += "<div class='col'><li><ul class='p-3 bg-info text-white'>";
-            displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token Allocation Pending</li>";
-            displayData += "</ul></li></div><br>";
+            displayData += "<div class='col'>";
+            displayData += "<li class='p-3 bg-info text-white tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token Allocation Pending</li>";
+            displayData += "</div><br>";
         }
         if ((counterDetails.length % 2 === 1) && (i === counterDetails.length - 1)) {
             displayData += "<div class='col'></div>"
