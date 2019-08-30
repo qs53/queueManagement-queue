@@ -6,9 +6,24 @@ body {
 
 ul {
   list-style-type: none;
-  padding-left: 0;
   line-height: 0.5em;
   padding-top: 10px;
+  border-radius: 10px;
+}
+
+ul.tokensList {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+div.col {
+  margin-bottom: 15px;
+}
+
+li.token {
+  padding: 5px;
+  width: 50%;
 }
 
 h2.my-div {
@@ -31,14 +46,18 @@ strong.tokenNum, strong.counterNum {
   font-size: 32px;
 }
 
-.blink{
-  padding: 15px;	
-  line-height: 50px;
+.blink {
   animation: blink 1s linear infinite;
 }
 
-@keyframes blink{
-  0%{opacity: 0;}
-  50%{opacity: .5;}
-  100%{opacity: 1;}
+@keyframes blink {
+  0% {
+    opacity: 0;
   }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
