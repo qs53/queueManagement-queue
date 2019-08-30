@@ -34,7 +34,7 @@ firebaseRef.on("value", function (snapshot) {
             }
             displayData += "</ul></li><br>";
         } else {
-            displayData += "<li><ul class='p-3 bg-danger text-white'>";
+            displayData += "<li><ul class='p-3 bg-info text-white'>";
             displayData += "<li class='tokenStatus'>" + counters[counterDetails[i]].name + " Counter <strong class='counterNum'>" + counters[counterDetails[i]].number + "</strong> - Token Allocation Pending</li>";
             displayData += "</ul></li><br>";
         }
