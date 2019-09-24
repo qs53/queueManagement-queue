@@ -19,6 +19,7 @@ firebaseRef.on("value", function (snapshot) {
         });
 
         document.querySelector("ul.tokensList").innerHTML = "";
+        document.querySelector("ul.tokensList").style.display = "block";
         document.getElementsByClassName("noCounters")[0].style.display = "none";
         for (let i = 0; i < counterDetails.length; i++) {
             i % 2 === 0 ? displayData += "<div class='row'>" : displayData += "";
